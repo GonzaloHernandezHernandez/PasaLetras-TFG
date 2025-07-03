@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000;
     questionsApi(app, db); // <-- pásale la conexión si la necesitas
 
     // Servir Angular
-    const angularDistPath = path.join(__dirname, 'dist/public/browser');
+    const angularDistPath = path.join(__dirname, 'dist/pasaletras/browser');
     app.use(express.static(angularDistPath));
     app.get(/^\/(?!api|questions).*/, (req, res) => {
       res.sendFile(path.join(angularDistPath, 'index.html'));
