@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
     app.use(express.urlencoded({ extended: true }));
 
     // Rutas
-    questionsApi(app, db); // <-- pásale la conexión si la necesitas
+    questionsApi(app, db); // <-- pasar la conexión si la necesitas
 
     // Servir Angular
     const angularDistPath = path.join(__dirname, 'dist/pasaletras/browser');
