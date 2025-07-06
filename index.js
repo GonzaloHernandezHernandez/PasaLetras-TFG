@@ -11,9 +11,10 @@ const PORT = process.env.PORT || 10000;
     const db = await new MongoLib().connect();
 
     // Middleware
-    app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
+	app.use(express.json()); 
 
+	questionsApi(app); 
     // Rutas
     questionsApi(app, db); // <-- pasar la conexión si la necesitas
 
